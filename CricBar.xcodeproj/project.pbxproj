@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		185B012C29A7EFD400FFDC10 /* response.json in Resources */ = {isa = PBXBuildFile; fileRef = 185B012B29A7EFD400FFDC10 /* response.json */; };
+		185590A729D9690300249AFC /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185590A629D9690300249AFC /* MatchView.swift */; };
 		1887FE5829D34AB0005DED8A /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1887FE5729D34AB0005DED8A /* StatusBarController.swift */; };
 		18DA503529D26635003A2E9F /* CBErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA503429D26635003A2E9F /* CBErrors.swift */; };
 		18E65DFA29D6359C0025E849 /* ScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E65DF929D6359C0025E849 /* ScoreViewModel.swift */; };
@@ -17,11 +17,10 @@
 		93B1DCFA29A1174F00373F03 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93B1DCF929A1174F00373F03 /* Preview Assets.xcassets */; };
 		93B1DD0229A1177900373F03 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B1DD0129A1177900373F03 /* NetworkManager.swift */; };
 		93B1DD0629A117D500373F03 /* LiveMatchesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93B1DD0529A117D500373F03 /* LiveMatchesData.swift */; };
-		93E7F6D529AD03310081A1FD /* JSONLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E7F6D429AD03310081A1FD /* JSONLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		185B012B29A7EFD400FFDC10 /* response.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = response.json; sourceTree = "<group>"; };
+		185590A629D9690300249AFC /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		1887FE5729D34AB0005DED8A /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		18DA503429D26635003A2E9F /* CBErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBErrors.swift; sourceTree = "<group>"; };
 		18E65DF929D6359C0025E849 /* ScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewModel.swift; sourceTree = "<group>"; };
@@ -33,7 +32,6 @@
 		93B1DCFB29A1174F00373F03 /* CricBar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CricBar.entitlements; sourceTree = "<group>"; };
 		93B1DD0129A1177900373F03 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		93B1DD0529A117D500373F03 /* LiveMatchesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveMatchesData.swift; sourceTree = "<group>"; };
-		93E7F6D429AD03310081A1FD /* JSONLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +45,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		185590A829D9692F00249AFC /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				93B1DD0129A1177900373F03 /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		185590A929D9693900249AFC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				18E65DF929D6359C0025E849 /* ScoreViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		185590AA29D9694300249AFC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				93B1DCF429A1174B00373F03 /* ContentView.swift */,
+				185590A629D9690300249AFC /* MatchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		185590AB29D9695900249AFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				93B1DD0529A117D500373F03 /* LiveMatchesData.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		185590AC29D9697000249AFC /* MenuBarController */ = {
+			isa = PBXGroup;
+			children = (
+				1887FE5729D34AB0005DED8A /* StatusBarController.swift */,
+			);
+			path = MenuBarController;
+			sourceTree = "<group>";
+		};
+		185590AD29D9698100249AFC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				18DA503429D26635003A2E9F /* CBErrors.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		93B1DCE629A1174B00373F03 = {
 			isa = PBXGroup;
 			children = (
@@ -67,14 +114,12 @@
 			isa = PBXGroup;
 			children = (
 				93B1DCF229A1174B00373F03 /* CricBarApp.swift */,
-				93B1DCF429A1174B00373F03 /* ContentView.swift */,
-				93B1DD0529A117D500373F03 /* LiveMatchesData.swift */,
-				18E65DF929D6359C0025E849 /* ScoreViewModel.swift */,
-				93B1DD0129A1177900373F03 /* NetworkManager.swift */,
-				1887FE5729D34AB0005DED8A /* StatusBarController.swift */,
-				18DA503429D26635003A2E9F /* CBErrors.swift */,
-				93E7F6D429AD03310081A1FD /* JSONLoader.swift */,
-				185B012B29A7EFD400FFDC10 /* response.json */,
+				185590AA29D9694300249AFC /* Views */,
+				185590AB29D9695900249AFC /* Model */,
+				185590A929D9693900249AFC /* ViewModel */,
+				185590A829D9692F00249AFC /* Manager */,
+				185590AC29D9697000249AFC /* MenuBarController */,
+				185590AD29D9698100249AFC /* Utilities */,
 				93B1DCF629A1174F00373F03 /* Assets.xcassets */,
 				93B1DCFB29A1174F00373F03 /* CricBar.entitlements */,
 				93B1DCF829A1174F00373F03 /* Preview Content */,
@@ -149,7 +194,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				93B1DCFA29A1174F00373F03 /* Preview Assets.xcassets in Resources */,
-				185B012C29A7EFD400FFDC10 /* response.json in Resources */,
 				93B1DCF729A1174F00373F03 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,7 +208,7 @@
 				93B1DD0229A1177900373F03 /* NetworkManager.swift in Sources */,
 				1887FE5829D34AB0005DED8A /* StatusBarController.swift in Sources */,
 				93B1DCF529A1174B00373F03 /* ContentView.swift in Sources */,
-				93E7F6D529AD03310081A1FD /* JSONLoader.swift in Sources */,
+				185590A729D9690300249AFC /* MatchView.swift in Sources */,
 				93B1DCF329A1174B00373F03 /* CricBarApp.swift in Sources */,
 				18E65DFA29D6359C0025E849 /* ScoreViewModel.swift in Sources */,
 				93B1DD0629A117D500373F03 /* LiveMatchesData.swift in Sources */,
