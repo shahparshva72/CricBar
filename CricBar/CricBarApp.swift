@@ -9,9 +9,23 @@ import SwiftUI
 
 @main
 struct CricBarApp: App {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        Settings {
+            EmptyView()
         }
+    }
+}
+
+class AppDelegate: NSObject, NSApplicationDelegate, NSPopoverDelegate {
+    var statusBar: StatusBarController?
+    
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        statusBar = StatusBarController()
+    }
+    
+    func applicationWillTerminate(_ notification: Notification) {
+        statusBar = nil
     }
 }
