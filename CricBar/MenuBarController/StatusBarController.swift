@@ -18,7 +18,7 @@ class StatusBarController: NSObject {
         let contentView = ContentView()
         
         popover = NSPopover()
-        popover.contentSize = NSSize(width: 300, height: 120)
+        popover.contentSize = NSSize(width: 400, height: 400)
         popover.behavior = .transient
         popover.animates = true
         popover.contentViewController = NSHostingController(rootView: contentView)
@@ -30,17 +30,29 @@ class StatusBarController: NSObject {
             button.action = #selector(togglePopover)
             button.target = self
         }
+        
+        NSEvent.addGlobalMonitorForEvents(matching: [.leftMouseDown, .rightMouseDown]) { [weak self] event in
+            guard let self = self else { return }
+            if self.popover.isShown {
+                self.hidePopover(event)
+            }
+        }
     }
 
-
+    func hidePopover(_ sender: Any) {
+        popover.performClose(sender)
+    }
+    
+    func showPopover() {
+        guard let button = statusBarItem.button else { return }
+        popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
+    }
     
     @objc func togglePopover(_ sender: AnyObject) {
         if popover.isShown {
-            popover.performClose(sender)
+            hidePopover(sender)
         } else {
-            if let button = statusBarItem.button {
-                popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY)
-            }
+            showPopover()
         }
     }
 
